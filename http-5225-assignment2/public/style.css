@@ -133,3 +133,15 @@ a:hover{
 .edit-form h1{
     margin: 20px;
 }
+
+
+.reg-form-container{
+    margin-top: 36px;
+    background-color: #293241;
+    width: 100%;
+    color: #e0e0e0;
+}
+
+.reg-form-container label{
+    font-size: 20px;
+}
