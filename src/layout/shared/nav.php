@@ -13,14 +13,24 @@
 
       <?php if(isset($_SESSION['user_id'])){
 
+        if( isset($_SESSION['isAdmin'])){
+
+          echo  '
+                <li class="nav-item">
+                  <a class="nav-link" href="/Http5225-assignment2/src/logout.php">Logout</a>
+                </li>';
+            
+          
+        } else {
         
          echo  '<li class="nav-item ">
-            <a class="nav-link active" aria-current="page" href="./compare.php">Compare food items</a>
-          </li>
+                  <a class="nav-link active" aria-current="page" href="./compare.php">Compare food items</a>
+                </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/Http5225-assignment2/src/logout.php">Logout</a>
-          </li>';
+                <li class="nav-item">
+                  <a class="nav-link" href="/Http5225-assignment2/src/logout.php">Logout</a>
+                </li>';
+        }
       }
       ?>
         <!-- <li class="nav-item">

@@ -38,8 +38,18 @@
                 $_SESSION['user_lname'] = $user["last_name"];
 
 
+                // check if the user is admin or not
+                if( $user['email'] === "garry@admin.com"){
 
+                    // set isAdmin to true in session and navigate to 
+                    $_SESSION['isAdmin'] = true;
 
+                    header("Location: /Http5225-assignment2/src/admin/dashboard.php");
+                    exit;
+
+                }
+
+                // navigate to home page if user is guest not admin
                 header("Location: /Http5225-assignment2/index.php");
 
             } else {
