@@ -1,15 +1,21 @@
-<!-- inclue header from shared layout -->
-    <?php include('./src/layout/shared/header.php'); ?>
+<?php 
+
+// Include database connection PHP file
+include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/connection.php');
+
+// Include nav bar from layout
+include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/nav.php');
+
+// Include nav bar from layout
+include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/header.php');
+
+?>
+
 
 <body>
-    
 <?php
 
-    // include database connection php file
-    include("./src/connection.php");
 
-    // include nav bar from layout
-    include("./src/layout/shared/nav.php");
 
     // get food_item_id from request
     $food_item_id = $_GET["food_item_id"];
@@ -33,11 +39,13 @@
         // echo '<pre>';
         // echo print_r($result); 
         // echo '</pre>';
+        print_r($_SESSION);
 ?>
 
 
 
 <div class="container d-flex justify-content-cetner align-items-center">
+
     <?php
 
 
@@ -45,6 +53,22 @@
         foreach ($result as $data) { ?>
             
             <div class="container detail-container">
+            
+            <?php
+            
+                // check if user is admin or not
+                if( $_SESSION['isAdmin'] ){
+                   echo '<form action="/Http5225-assignment2/src/admin/dashboard.php" method="GET">
+
+                            <input type="hidden"  value="<?php  echo $food_item_id ?>" name="food_item_id" class="btn btn-dark">
+
+                            <input type="submit"  value="Back to dashboard" class="btn btn-dark">
+                                                    
+                        </form> ';
+                }
+            
+            ?>
+
                     <div class="card mb-3 p-4 bg-effect">
 
                         <div class="row g-4">
@@ -69,7 +93,7 @@
                                     <h3> <span class="sub-title">Vitamin C - </span> <?php echo $data['vitamin_c_mg']; ?> mg</h3>
                                 
                                     
-                                    <form action="./edit.php" method="GET">
+                                    <form action="/Http5225-assignment2/src/edit.php" method="GET">
 
                                         <input type="hidden"  value="<?php  echo $food_item_id ?>" name="food_item_id" class="btn btn-dark">
 

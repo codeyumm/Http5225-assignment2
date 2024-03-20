@@ -44,7 +44,7 @@
     if($result) {
 
         // if update is successsful redirect to detail page
-        $detailPage = '/../http-5225-assignment1/details.php?food_item_id='. $food_item_id;
+        $detailPage = '/Http5225-assignment2/src/details.php?food_item_id='. $food_item_id;
         header('Location: '.$detailPage);
         // echo "Update successful.";
     } else {

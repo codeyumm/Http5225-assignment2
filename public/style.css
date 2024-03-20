@@ -149,3 +149,23 @@ a:hover{
 .container h2{
     color: white;
 }
+
+.img-thumbnail{
+    width: 40%;
+    max-height: 120px;
+}
+
+.action-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-edit:hover{
+    background-color: #3D5A80 !important;
+    color: white !important;
+}
+
+.btn-delete:hover{
+    background-color: #880808 !important;
+    color: white !important;
+}

@@ -1,15 +1,20 @@
-<!-- inclue header from shared layout -->
-<?php include('./src/layout/shared/header.php'); ?>
+<?php
 
+
+    // Include database connection PHP file
+    include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/connection.php');
+    
+    // Include nav bar from layout
+    include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/nav.php');
+    
+    // Include nav bar from layout
+    include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/header.php');
+
+?>
 <body>
     
 <?php
 
-    // include database connection php file
-    include("./src/connection.php");
-
-    // include nav bar from layout
-    include("./src/layout/shared/nav.php");
 
     // get food_item_id from request
     $food_item_id = $_GET["food_item_id"];
@@ -41,10 +46,28 @@
 
 
 <div class="container edit-section">
+    
+                
+<?php
+            
+        // check if user is admin or not
+        if( $_SESSION['isAdmin'] ){
+            echo '<form action="/Http5225-assignment2/src/admin/dashboard.php" method="GET">
+
+                    <input type="hidden"  value="<?php  echo $food_item_id ?>" name="food_item_id" class="btn btn-dark">
+
+                    <input type="submit"  value="Back to dashboard" class="btn btn-dark">
+                                                
+                </form> ';
+        }
+        
+?>
+
+
     <div class="row">
     <h1>Edit Food Item</h1>
 
-    <form class="edit-form" method="POST" action="./src/components/update.php">
+    <form class="edit-form" method="POST" action="/Http5225-assignment2/src/components/update.php">
 
          <!-- hidden input field to check if request is coming from edit form or not -->
         <input type="hidden" name="isFromEditForm" value="true">

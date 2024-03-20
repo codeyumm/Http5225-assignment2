@@ -37,7 +37,7 @@
 
     } else {
 
-        echo "sql error" . mysqli_error($connection);
+        echo "sql error" . mysqli_error($conn);
 
     }
 
@@ -51,7 +51,7 @@
     
     } else {
     
-        echo "sql error" . mysqli_error($connection);
+        echo "sql error" . mysqli_error($conn);
     
     }
    
@@ -69,7 +69,9 @@
                         <div class="card-body">
                             <h4 class="card-title">Products</h4>
                             <p class="card-text">Total: <span id="totalProducts"><?php echo $total_food_items ?></span></p>
-                            <a href="products.php" class="btn btn-dark">View All Products</a>
+                            <a href="./items.php" class="btn btn-dark">View All Products</a>
+                            <a href="./items.php" class="btn btn-dark">Add A New Product</a>
+
                         </div>
                     </div>
             </div>
@@ -79,6 +81,8 @@
                             <h4 class="card-title">Users</h4>
                             <p class="card-text">Total: <span id="totalUsers"><?php echo $total_users ?></span></p>
                             <a href="users.php" class="btn btn-dark">View All Users</a>
+                            <a href="./items.php" class="btn btn-dark">Add A New User</a>
+
                         </div>
                     </div>
             </div>
