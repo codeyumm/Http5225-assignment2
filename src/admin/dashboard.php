@@ -54,9 +54,7 @@
         echo "sql error" . mysqli_error($conn);
     
     }
-   
-
-
+    
 ?>
     
 <div class="container mt-5">
@@ -70,7 +68,7 @@
                             <h4 class="card-title">Products</h4>
                             <p class="card-text">Total: <span id="totalProducts"><?php echo $total_food_items ?></span></p>
                             <a href="./items.php" class="btn btn-dark">View All Products</a>
-                            <a href="./items.php" class="btn btn-dark">Add A New Product</a>
+                            <a href="./add-item.php" class="btn btn-dark">Add A New Product</a>
 
                         </div>
                     </div>
@@ -78,10 +76,11 @@
             <div class="col-md-6">
                     <div class="card glassmorphism">
                         <div class="card-body">
+
                             <h4 class="card-title">Users</h4>
-                            <p class="card-text">Total: <span id="totalUsers"><?php echo $total_users ?></span></p>
-                            <a href="users.php" class="btn btn-dark">View All Users</a>
-                            <a href="./items.php" class="btn btn-dark">Add A New User</a>
+                            <p class="card-text">Total: <span id="totalUsers"><?php echo ($total_users - 1) ?></span></p>
+                            <a href="./users.php" class="btn btn-dark">View All Users</a>
+                            <a href="./add-user.php" class="btn btn-dark">Add A New User</a>
 
                         </div>
                     </div>

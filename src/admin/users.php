@@ -15,7 +15,7 @@
     $conn = ConnectDB();
 
     // query to fetch products
-    $query = "SELECT * FROM food_items JOIN food_item_data ON food_items.food_item_id = food_item_data.food_item_id";
+    $query = "SELECT * FROM users";
     
     // execute query
     $result = mysqli_query($conn, $query);
@@ -70,7 +70,7 @@
             
 ?>
 
-<h2 class="mb-4">All Products</h2>
+<h2 class="mb-4">All Users</h2>
 
 <div class="table-responsive">
     <table class="table table-bordered">
@@ -80,7 +80,8 @@
                 <th>ID</th>
                 <th>Name</th>
                 <!-- <th>Image</th> -->
-                <th>Actions</th>
+                <th>Email</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -90,13 +91,17 @@
 
             // Iterate through each product
             while ($row = mysqli_fetch_assoc($result)) {
+                if($row['email'] === "garry@admin.com"){
+                    continue;
+                }
                 echo '<tr>';
                 echo '<td>' . $counter . '</td>'; // Display the counter
-                echo '<td>' . $row['food_item_id'] . '</td>';
-                echo '<td class="name-container"><a href="/Http5225-assignment2/src/details.php?food_item_id=' . $row['food_item_id'] . '">' . $row['food_item_name'] . '</a></td>';
+                echo '<td>' . $row['id'] . '</td>';
+                echo '<td class="name-container"><a href="/Http5225-assignment2/src/details.php?user_id=' . $row['id'] . '">' . $row['first_name'] . ' ' . $row['last_name'] . '</a></td>';
+                echo '<td>' . $row['email'] . '</td>';
                 echo '<td class="action-container">';
-                echo '<a href="/Http5225-assignment2/src/edit.php?food_item_id=' . $row['food_item_id'] . '" class="btn btn-dark btn-edit btn-sm mr-1">Edit</a>';
-                echo '<a href="/Http5225-assignment2/src/admin/delete.php?food_item_id=' . $row['food_item_id'] . '" class="btn btn-dark btn-delete btn-sm ml-1" data-toggle="modal" data-itemID="'.  $row['food_item_id'] .'" data-target="#deleteConfirmationModal">Delete</a>';
+                echo '<a href="/Http5225-assignment2/src/user/edit.php?user_id=' . $row['id'] . '" class="btn btn-dark btn-edit btn-sm mr-1">Edit</a>';
+                echo '<a href="/Http5225-assignment2/src/src/components/process-delete-user.php?user_id=' . $row['id'] . '" class="btn btn-dark btn-delete btn-sm ml-1" data-toggle="modal" data-itemID="'.  $row['id'] .'" data-target="#deleteConfirmationModal">Delete</a>';
                 echo '</td>';
                 echo '</tr>';
 
@@ -136,21 +141,20 @@
 </div>
 
 
-
 <script>
             
             document.querySelectorAll('.btn-delete').forEach(function(btn) {
                 btn.addEventListener('click', function() {
-                    var foodItemIdToDelete = this.dataset.itemid;
+                    var user_id = this.dataset.itemid;
                     document.getElementById('confirmDeleteButton').addEventListener('click', function() {
-                        deleteItem(foodItemIdToDelete);
+                        deleteItem(user_id);
                     });
                 });
             });
 
   
-            function deleteItem(food_item_id) {
-                window.location.href = '/Http5225-assignment2/src/components/process-delete.php?food_item_id=' + food_item_id; 
+            function deleteItem(user_id) {
+                window.location.href = '/Http5225-assignment2/src/components/process-delete-user.php?user_id=' + user_id; 
             }
 
 </script>   

@@ -169,3 +169,15 @@ a:hover{
     background-color: #880808 !important;
     color: white !important;
 }
+
+.btn-details{
+    font-size: 12px;
+    color: #293241;
+    text-align: right !important;
+}
+
+.name-container a{
+    color: #293241;
+    text-decoration: none;
+}
+

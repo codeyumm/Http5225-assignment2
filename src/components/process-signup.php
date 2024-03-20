@@ -58,6 +58,16 @@ if (isset($_POST['isFromSignup'])) {
     // run the query on database and store the result
     if ($stmt->execute()){
 
+        // when user is added by admin
+        session_start();
+
+        if( $_SESSION['isAdmin'] ){
+            header("Location: /Http5225-assignment2/src/admin/users.php?status=newUser");
+            exit;
+        }
+
+
+
         header("Location: /Http5225-assignment2/src/login.php?status=newUser");
 
 

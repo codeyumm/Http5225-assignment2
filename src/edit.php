@@ -52,11 +52,11 @@
             
         // check if user is admin or not
         if( $_SESSION['isAdmin'] ){
-            echo '<form action="/Http5225-assignment2/src/admin/dashboard.php" method="GET">
+            echo '<form action="/Http5225-assignment2/src/admin/items.php" method="GET">
 
                     <input type="hidden"  value="<?php  echo $food_item_id ?>" name="food_item_id" class="btn btn-dark">
 
-                    <input type="submit"  value="Back to dashboard" class="btn btn-dark">
+                    <input type="submit"  value="Back to list" class="btn btn-dark">
                                                 
                 </form> ';
         }
