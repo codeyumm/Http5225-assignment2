@@ -15,8 +15,35 @@
 ?>
 
 
-<?php echo $_SERVER['DOCUMENT_ROOT'] . '/Http-5225-assignment2/src/connection.php' ?>
 
+
+<!-- check if request coming from process-loging.php with invalid status  -->
+<?php
+
+    // Check if the status parameter exists in the URL
+    if(isset($_GET['status'])) {
+        // Check the value of the status parameter
+        $status = $_GET['status'];
+        
+        // Display appropriate message based on the status
+        if($status === "invalid") {
+
+            echo  '<div class="alert alert-danger alert-dismissible fade show">
+                        <strong>Username or password is invalid.</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>';
+
+        } elseif ($status === "newUser") {
+
+            echo '<div class="alert alert-success alert-dismissible fade show">
+                        <strong>Registration successful. Now you can login.</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>';
+
+        }
+    }
+
+?>
 
 
 <div class="container-fluid">

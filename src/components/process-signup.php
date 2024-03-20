@@ -41,7 +41,7 @@ if (isset($_POST['isFromSignup'])) {
 
     $conn = ConnectDB();
 
-    $query = "INSERT INTO user (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
 
     $stmt = $conn->prepare($query);
 
@@ -58,7 +58,8 @@ if (isset($_POST['isFromSignup'])) {
     // run the query on database and store the result
     if ($stmt->execute()){
 
-        header("Location: /Http5225-assignment2/index.php");
+        header("Location: /Http5225-assignment2/src/login.php?status=newUser");
+
 
     } else {
         die($conn->error);

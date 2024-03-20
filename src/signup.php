@@ -16,8 +16,6 @@
 ?>
 
 
-<?php echo $_SERVER['DOCUMENT_ROOT'] . '/Http-5225-assignment2/src/connection.php' ?>
-
 
 
 <div class="container-fluid">
