@@ -8,13 +8,22 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav ">
-        <li class="nav-item ">
-          <a class="nav-link active" aria-current="page" href="./compare.php">Compare food items</a>
-        </li>
+
+      <?php session_start(); ?>
+
+      <?php if(isset($_SESSION['user_id'])){
+
+        
+         echo  '<li class="nav-item ">
+            <a class="nav-link active" aria-current="page" href="./compare.php">Compare food items</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/Http5225-assignment2/src/logout.php">Logout</a>
+          </li>';
+      }
+      ?>
         <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">

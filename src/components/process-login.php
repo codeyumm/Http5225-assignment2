@@ -30,6 +30,16 @@
             // verify password
             if (password_verify($_POST['password'], $user['password'])) {
 
+                // start the session and set user id in session array
+                session_start();
+
+                $_SESSION['user_id'] = $user["id"];
+                $_SESSION['user_fname'] = $user["first_name"];
+                $_SESSION['user_lname'] = $user["last_name"];
+
+
+
+
                 header("Location: /Http5225-assignment2/index.php");
 
             } else {

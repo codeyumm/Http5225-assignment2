@@ -22,14 +22,26 @@
 
     $result = mysqli_query($conn, $query);
 
-
     // for testing response from db
         // echo '<pre>';
         // echo print_r($result); 
         // echo '</pre>';
+
+    // session_start();
+
+    // check is user id in session exist or not
+    // if not navigate back to the login page
+    if( $_SESSION['user_id'] == null){
+ 
+        header("Location: /Http5225-assignment2/src/login.php");
+        exit;
+
+    }
+
 ?>
 
     <div class="container mt-4">
+    <?php echo '<h2> Welcome '. $_SESSION['user_fname'] . ' ' . $_SESSION['user_lname'] .' </h2>'; ?>
         <div class="row">
 
             <!-- iterate through each food item in result and get the values  -->

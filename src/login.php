@@ -11,10 +11,11 @@
     include('../src/connection.php');
 
     // Include nav bar from layout
+    include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/nav.php');
+
+    // Include nav bar from layout
     include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/header.php');
 ?>
-
-
 
 
 <!-- check if request coming from process-loging.php with invalid status  -->
