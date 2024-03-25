@@ -62,7 +62,7 @@
                         <div class="card-footer text-muted">
 
                         <!-- passing food_item_id to details page -->
-                            <form action="./details.php" method="GET">
+                            <form action="./src/details.php" method="GET">
                                 <input type="hidden" value="<?php echo $food_item['food_item_id'] ?>" name="food_item_id" />
                                 <input type="submit"  value="Know more" class="btn btn-dark">
                                     

@@ -1,12 +1,15 @@
-<!-- include header from shared layout -->
-<?php include('./src/layout/shared/header.php'); ?>
+<?php 
 
-<!-- include nav from shared layout -->
-<?php include('./src/layout/shared/nav.php'); ?>
+// Include database connection PHP file
+include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/connection.php');
 
-<!-- include database connection php file -->
-<?php  include("./src/connection.php"); ?>
+// Include nav bar from layout
+include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/nav.php');
 
+// Include nav bar from layout
+include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/header.php');
+
+?>
 <div class="container">
 
     <?php

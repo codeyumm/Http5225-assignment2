@@ -59,7 +59,8 @@
     
 <div class="container mt-5">
     <div class="row">
-        <h2>Admin Dashboard</h2>
+        <h2>Hello <?php  echo $_SESSION['user_fname'] ?> (Admin) </h2>
+        <h2>Dashboard</h2>
     </div>
     <div class="row mt-4">
             <div class="col-md-6 mb-4">

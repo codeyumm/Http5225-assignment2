@@ -39,7 +39,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Http5225-Assignment2/src/layout/shared/hea
         // echo '<pre>';
         // echo print_r($result); 
         // echo '</pre>';
-        print_r($_SESSION);
+       
 ?>
 
 
